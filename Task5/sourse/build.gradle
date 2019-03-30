@@ -1,0 +1,43 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+}
+
+dependencies {
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+repositories {
+    mavenCentral()
+}
+
+task opera(type: Test) {
+    environment 'test.browser', 'opera'
+    environment 'test.version', '58.0'
+}
+
+task firefox(type: Test) {
+    environment 'test.browser', 'firefox'
+    environment 'test.version', '66.0'
+}
+
+task chrome(type: Test) {
+    environment 'test.browser', 'chrome'
+    environment 'test.version', '73.0'
+}
+
+task all {
+    dependsOn firefox, opera, chrome
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
