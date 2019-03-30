@@ -1,7 +1,7 @@
-###Предустановленное ПО
+### Предустановленное ПО
 - Docker
 
-###Установка
+### Установка
 0. Включить Docker
 0. Скачать последнию версию **Configuration Manager** c [GitHub](https://github.com/aerokube/cm/releases)
 0. Скачать последнию версию **Selenoid** c [GitHub](https://github.com/aerokube/selenoid/releases/)
